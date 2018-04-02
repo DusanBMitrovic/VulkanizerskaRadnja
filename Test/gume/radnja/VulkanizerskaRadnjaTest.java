@@ -48,8 +48,12 @@ public class VulkanizerskaRadnjaTest {
 	 */
 	@Test
 	public void testDodajGumu() {
+		
 		vr.dodajGumu(ag);
+		assertEquals(true, vr.gume.contains(ag));
 		assertEquals(1, vr.gume.size());
+		
+		
 	}
 
 	@Test
@@ -62,7 +66,8 @@ public class VulkanizerskaRadnjaTest {
 		ag2.setSirina(190);
 		ag2.setVisina(60);
 		vr.dodajGumu(ag2);
-
+		
+		assertEquals(true,vr.gume.contains(ag2));
 		assertEquals(2, vr.gume.size());
 	}
 	
@@ -121,7 +126,7 @@ public class VulkanizerskaRadnjaTest {
 		vr.dodajGumu(ag3);
 
 		LinkedList<AutoGuma> nova = vr.pronadjiGumu("BMW 330");
-
+		assertEquals(true, nova.contains(ag3));
 		assertEquals(2, nova.size());
 
 	}
